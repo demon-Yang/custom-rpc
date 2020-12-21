@@ -1,0 +1,8 @@
+2020-12-21 15:23:44.261 [main] ERROR com.yxd.util.LogbackUtil - java.lang.IllegalArgumentException: Path must start with / character
+2020-12-21 15:36:11.644 [main] ERROR com.yxd.util.LogbackUtil - java.lang.IllegalArgumentException: Path must start with / character
+2020-12-21 15:40:40.740 [main] ERROR com.yxd.util.LogbackUtil - java.lang.IllegalArgumentException: Invalid path string "/custom-rpc//custom-rpc/test" caused by empty node name specified @12
+2020-12-21 16:08:10.098 [main] ERROR com.yxd.util.LogbackUtil - java.lang.IllegalArgumentException: Path must not end with / character
+2020-12-21 16:08:40.105 [main] ERROR com.yxd.util.LogbackUtil - org.apache.zookeeper.KeeperException$NoNodeException: KeeperErrorCode = NoNode for /custom-rpc/test
+2020-12-21 17:58:33.659 [main] ERROR com.yxd.util.LogbackUtil - java.lang.IllegalArgumentException: Path must not end with / character
+2020-12-21 17:59:01.708 [main] ERROR com.yxd.util.LogbackUtil - java.lang.IllegalArgumentException: Path must not end with / character
+2020-12-21 18:10:13.548 [main] ERROR com.yxd.util.LogbackUtil - org.apache.zookeeper.KeeperException$NoNodeException: KeeperErrorCode = NoNode for /custom-rpccom.yxd.testService
