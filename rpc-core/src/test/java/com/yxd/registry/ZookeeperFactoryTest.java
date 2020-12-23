@@ -24,7 +24,7 @@ class ZookeeperFactoryTest {
     void getChildrenNodes() {
         List<String> childrenNodes = ZookeeperFactory.getChildrenNodes("/com.yxd.testService");
         for (String node : childrenNodes) {
-            LogbackUtil.info(node);
+            LogbackUtil.info("获取子节点【{}】",node);
         }
     }
 

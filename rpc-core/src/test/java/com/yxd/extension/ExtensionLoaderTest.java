@@ -16,7 +16,7 @@ class ExtensionLoaderTest {
 
     @Test
     void getExtensionLoader() {
-        LoadBalance loadBalance = (LoadBalance) ExtensionLoader.getExtensionLoader(LoadBalance.class).getExtension("loadbalance");
+        LoadBalance loadBalance = (LoadBalance) ExtensionLoader.getExtensionLoader(LoadBalance.class).getExtension("loadBalance");
         LogbackUtil.info(loadBalance.getClass().getSimpleName());
     }
 }
