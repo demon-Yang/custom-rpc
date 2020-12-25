@@ -14,7 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @Author YXD
  * @Version 1.0
  */
-public class ServiceExpose {
+public class RpcServiceExpose {
     public final static ConcurrentHashMap<String, Object> serviceMap = new ConcurrentHashMap<>();
 
     /**

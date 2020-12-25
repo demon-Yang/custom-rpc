@@ -1,6 +1,6 @@
 package com.yxd.remote.server;
 
-import com.yxd.expose.ServiceExpose;
+import com.yxd.expose.RpcServiceExpose;
 import com.yxd.remote.entity.RpcRequest;
 import com.yxd.util.LogbackUtil;
 
