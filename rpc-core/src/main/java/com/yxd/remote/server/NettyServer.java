@@ -24,6 +24,7 @@ import java.util.concurrent.TimeUnit;
  * @Version 1.0
  */
 public class NettyServer {
+
     public void start() {
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();

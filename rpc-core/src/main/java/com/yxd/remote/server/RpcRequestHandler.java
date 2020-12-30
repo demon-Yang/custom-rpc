@@ -30,7 +30,7 @@ public class RpcRequestHandler {
     private static Object invokeTargetMethod(RpcRequest rpcRequest) {
         Object result = null;
         try {
-            Object service = ServiceExpose.serviceMap.get(rpcRequest.getInterfaceName());
+            Object service = RpcServiceExpose.serviceMap.get(rpcRequest.getInterfaceName());
             Method method = service.getClass().getMethod(rpcRequest.getMethodName(), rpcRequest.getParamTypes());
             result = method.invoke(service, rpcRequest.getParameters());
         } catch (Exception e) {

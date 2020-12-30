@@ -35,8 +35,6 @@ public class NettyClient {
     private final EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
     private final Map<String, Channel> channelMap = new ConcurrentHashMap<>();
 
-    private NettyClient() {}
-
     public void start() {
         bootstrap.group(eventLoopGroup)
                 .channel(NioSocketChannel.class)
@@ -58,6 +56,7 @@ public class NettyClient {
 
     /**
      * 发送请求
+     *
      * @param rpcRequest
      * @return
      */
@@ -94,6 +93,7 @@ public class NettyClient {
 
     /**
      * 获取channel
+     *
      * @param inetSocketAddress
      * @return
      */
