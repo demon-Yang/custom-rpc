@@ -18,7 +18,7 @@ class ZookeeperDiscoveryTest {
     @Test
     void lookupService() {
         ZookeeperDiscovery zookeeperDiscovery = new ZookeeperDiscovery("randomBalance");
-        InetSocketAddress inetSocketAddress = zookeeperDiscovery.lookupService("/com.yxd.test");
+        InetSocketAddress inetSocketAddress = zookeeperDiscovery.lookupService("com.yxd.test");
         LogbackUtil.info("获取服务地址【{}】", inetSocketAddress.toString());
     }
 }

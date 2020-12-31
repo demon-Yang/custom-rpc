@@ -10,7 +10,7 @@ public interface RpcConstant {
     /**
      * 端口号
      */
-    int PORT = 8080;
+    int PORT = 8888;
 
     /**
      * 魔法数

@@ -25,10 +25,10 @@ public class RpcServiceExpose {
             //注册到zookeeper
             String hostname = InetAddress.getLocalHost().getHostAddress();
             ZookeeperRegistry.registryService(
-                    bean.getClass().getCanonicalName(),
+                    bean.getClass().getInterfaces()[0].getCanonicalName(),
                     new InetSocketAddress(hostname, RpcConstant.PORT));
             //添加到map
-            serviceMap.putIfAbsent(bean.getClass().getCanonicalName(), bean);
+            serviceMap.putIfAbsent(bean.getClass().getInterfaces()[0].getCanonicalName(), bean);
         } catch (Exception e) {
             e.printStackTrace();
             LogbackUtil.error(e.toString());

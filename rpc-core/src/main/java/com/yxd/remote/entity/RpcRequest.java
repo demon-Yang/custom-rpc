@@ -31,6 +31,9 @@ public class RpcRequest implements Serializable {
      */
     private Class<?>[] paramTypes;
 
+    public RpcRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

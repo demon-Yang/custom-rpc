@@ -27,7 +27,7 @@ public class NettyServerHandler extends ChannelInboundHandlerAdapter {
             if (msg instanceof RpcMessage) {
                 byte messageType = ((RpcMessage) msg).getMessageType();
                 int requestId = ((RpcMessage) msg).getRequestId();
-                if (messageType == MessageTypeEnum.REQUEST_TYPE.getCode()) {
+                if (messageType == MessageTypeEnum.HEARTBEAT_PING.getCode()) {
                     RpcMessage rpcMessage = RpcMessage.builder()
                             .setMessageType(MessageTypeEnum.HEARTBEAT_PONG.getCode())
                             .setCodec(RpcConstant.KYRO)

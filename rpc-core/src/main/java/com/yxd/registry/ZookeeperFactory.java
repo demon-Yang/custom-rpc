@@ -54,7 +54,7 @@ public class ZookeeperFactory {
         //检查是否有创建zookeeper客户端
         obtainZKClient();
         List<String> result = new ArrayList<String>();
-        String servicePath = ZK_REGISTER_ROOT_PATH + rpcServiceName;
+        String servicePath = ZK_REGISTER_ROOT_PATH + "/" + rpcServiceName;
         try {
             result = zkClient.getChildren().forPath(servicePath);
         } catch (Exception e) {

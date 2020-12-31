@@ -57,6 +57,7 @@ public class NettyServer {
             // 等待服务端监听端口关闭
             f.channel().closeFuture().sync();
         } catch (Exception e) {
+            e.printStackTrace();
             LogbackUtil.error("occur exception when start server: {}", e.toString());
         } finally {
             bossGroup.shutdownGracefully();

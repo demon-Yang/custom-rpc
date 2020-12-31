@@ -28,6 +28,9 @@ public class RpcMessage {
      */
     private Object data;
 
+    public RpcMessage() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

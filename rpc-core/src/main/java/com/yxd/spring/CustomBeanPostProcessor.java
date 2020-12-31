@@ -6,6 +6,7 @@ import com.yxd.expose.RpcServiceExpose;
 import com.yxd.proxy.RpcClientProxy;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
+import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Field;
 
@@ -15,6 +16,7 @@ import java.lang.reflect.Field;
  * @Author YXD
  * @Version 1.0
  */
+@Component
 public class CustomBeanPostProcessor implements BeanPostProcessor {
 
     @Override

@@ -1,5 +1,6 @@
 package com.yxd.remote.client;
 
+import com.yxd.factory.SingletonFactory;
 import com.yxd.registry.ZookeeperDiscovery;
 import com.yxd.remote.codec.RpcMessageDecoder;
 import com.yxd.remote.codec.RpcMessageEncoder;
@@ -34,6 +35,7 @@ public class NettyClient {
     private final Bootstrap bootstrap = new Bootstrap();
     private final EventLoopGroup eventLoopGroup = new NioEventLoopGroup();
     private final Map<String, Channel> channelMap = new ConcurrentHashMap<>();
+    private final UnprocessedRequest unprocessedRequests = SingletonFactory.getInstance(UnprocessedRequest.class);
 
     public void start() {
         bootstrap.group(eventLoopGroup)
@@ -75,9 +77,12 @@ public class NettyClient {
                     .setCodec(RpcConstant.KYRO)
                     .setData(rpcRequest)
                     .build();
+            // save request future
+            unprocessedRequests.put(rpcRequest.getRequestId(), resultFuture);
+            // send message
             channel.writeAndFlush(rpcMessage).addListener((ChannelFutureListener) future -> {
                 if (future.isSuccess()) {
-                    LogbackUtil.info("client send message: [{}]", rpcMessage);
+                    LogbackUtil.info("netty发送: [{}]", rpcMessage);
                 } else {
                     future.channel().close();
                     resultFuture.completeExceptionally(future.cause());
